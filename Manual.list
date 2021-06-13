@@ -1,5 +1,5 @@
 # 内容：个人化需代理
 # 数量：29条
-DOMAIN-KEYWORD,so-net.tw
-DOMAIN-KEYWORD,com.tw
-DOMAIL-KEYWORD,co.jp
+DOMAIN-SUFFIX,so-net.tw
+DOMAIN-SUFFIX,com.tw
+DOMAIL-SUFFIX,co.jp
