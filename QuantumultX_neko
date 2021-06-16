@@ -100,8 +100,8 @@ server=/*.xiaomi.com/119.29.29.29
 static=🍎 苹果服务, direct, proxy, img-url= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
 static=💻 海外影视, proxy, direct, img-url= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/ForeignMedia.png
 static=📽 国内视频, direct, proxy, img-url= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/DomesticMedia.png
-static=🐼 国内网站,proxy,direct,img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Global.png
-static=🕹 终极清单,direct, proxy, img-url= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
+static=🐼 国内网站, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Global.png
+static=🕹 终极清单, direct, proxy, img-url= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 
 #server-tag-regex 以及 resource-tag-regex 参数用于正则筛选来建立策略组
 #具体可参见教程部分: https://shrtm.nu/DAFP
@@ -136,8 +136,6 @@ static=🕹 终极清单,direct, proxy, img-url= https://raw.githubusercontent.c
 
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Advertising.list, tag=🚦去广告, update-interval=86400, opt-parser=true, enabled=true
 
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=🚫 运营商劫持, enabled=true
-
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/StreamingCN.list, force-policy=📽 国内视频, tag=📽 国内视频, enabled=true
 
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=💻 国外影视,force-policy= 💻 国外影视, enabled=true
@@ -163,8 +161,6 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=神机复写(⛔️去广告), update-interval=86400, opt-parser=false, enabled=true
 
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=神机复写(😄️通用), update-interval=86400, opt-parser=false, enabled=true
-
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Unlock/TikTokJP.conf, tag=神机复写(🎵️TikTok-JP), update-interval=86400, opt-parser=false, enabled=false
 
 ;Youtube premium 会员请勿开启此条
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=神机复写(🈲YouTube-AD), update-interval=86400, opt-parser=false, enabled=true
@@ -210,23 +206,6 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 
 #本地分流规则(对于完全相同的某条规则，本地的将优先生效)
 [filter_local]
-host-keyword, beanfun.com, TW
-host-keyword, sugging.org, 🌏 国外网站
-host-keyword, cnzz.com, 🌏 国外网站
-host-keyword, discordapp.net, 🌏 国外网站
-host-keyword, hcaptcha.com, 🌏 国外网站
-host-keyword, discord.com, 🌏 国外网站
-host-keyword, adtng.com, 🌏 国外网站
-host-keyword, 1069-2.com, 🌏 国外网站
-host-keyword, akamaized.net, 🇺🇸 Static
-host-keyword, redive.estertion.win, 🌏 国外网站
-host-suffix, .co.jp, 🌏 国外网站
-host-suffix, .com.tw, 🌏 国外网站
-host-keyword, cygames.jp, 🇺🇸 Static
-host-keyword, line.com, 🌏 国外网站
-host-keyword, linecorp.com, 🌏 国外网站
-host-keyword, sekai.colorfulpalette.org, 🌏 国外网站
-host-suffix, so-net.tw, TW
 ;user-agent, ?abc*, proxy
 ;host, www.google.com, proxy
 ;host-keyword, adsite, reject
@@ -237,7 +216,7 @@ ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 ip-cidr, 224.0.0.0/24, direct
 # 已采用 ip 池数据，因此注释掉 geoip cn
-;geoip, cn, direct
+geoip, cn, 🐼 国内网站
 
 #不在上述规则中(远程以及本地)的剩余请求，将走final 指定的节点/策略，这里即是 → 🕹 终极清单, 请根据自己的需求来选择直连或节点、策略
 final, 🕹 终极清单
